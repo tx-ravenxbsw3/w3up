@@ -1,5 +1,100 @@
 # Changelog
 
+## [21.0.0](https://github.com/tx-ravenxbsw3/w3up/compare/access-v20.3.0...access-v21.0.0) (2025-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **upload-api:** integrate agent store for idempotence & invocation/receipt persistence  ([#1444](https://github.com/tx-ravenxbsw3/w3up/issues/1444))
+* delegated capabilities required to use `uploadFile`, `uploadDirectory` and `uploadCAR` have changed. In order to use these methods your agent will now need to be delegated `blob/add`, `index/add`, `filecoin/offer` and `upload/add` capabilities. Note: no code changes are required.
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344))
+* coupon ([#1136](https://github.com/tx-ravenxbsw3/w3up/issues/1136))
+* tweak readmes to get release-please to bump major version ([#1102](https://github.com/tx-ravenxbsw3/w3up/issues/1102))
+
+### Features
+
+* access agent proofs method would fail to return some session proofs ([#1047](https://github.com/tx-ravenxbsw3/w3up/issues/1047)) ([fd6c574](https://github.com/tx-ravenxbsw3/w3up/commit/fd6c574471e443b15ae3eba9d2c7304262ba5e49))
+* add "plan/create-admin-session" capability ([#1411](https://github.com/tx-ravenxbsw3/w3up/issues/1411)) ([d9662c7](https://github.com/tx-ravenxbsw3/w3up/commit/d9662c75dd138be02213931be3c8b59f08f26ad1))
+* add `subscription/list` capability ([#1088](https://github.com/tx-ravenxbsw3/w3up/issues/1088)) ([dd2c715](https://github.com/tx-ravenxbsw3/w3up/commit/dd2c715b6b3004425273d15e3a9eaa3d2f25673a))
+* add blob protocol to upload-client ([#1425](https://github.com/tx-ravenxbsw3/w3up/issues/1425)) ([44bde76](https://github.com/tx-ravenxbsw3/w3up/commit/44bde7616adc94f82cfef751bcaa94cf59bf24c5))
+* add usage/report capability ([#1079](https://github.com/tx-ravenxbsw3/w3up/issues/1079)) ([95db863](https://github.com/tx-ravenxbsw3/w3up/commit/95db8632ce796ff698d7b016cca6e676e846eeac))
+* coupon ([#1136](https://github.com/tx-ravenxbsw3/w3up/issues/1136)) ([c41320d](https://github.com/tx-ravenxbsw3/w3up/commit/c41320d6fccaa4b9fac924acae3259fd1df142e9))
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344)) ([db98e3a](https://github.com/tx-ravenxbsw3/w3up/commit/db98e3ad7fd5ce589ab5f002a9e614341f9121ca))
+* expose OwnedSpace and SharedSpace from access-client ([#1244](https://github.com/tx-ravenxbsw3/w3up/issues/1244)) ([a62f513](https://github.com/tx-ravenxbsw3/w3up/commit/a62f5135ac4cfcb06f0b6841b8aad3d154b48815))
+* external login ([#1629](https://github.com/tx-ravenxbsw3/w3up/issues/1629)) ([638c31c](https://github.com/tx-ravenxbsw3/w3up/commit/638c31c5ae06fa73264b2fa45cd223fc2f7cc704))
+* generate sharded DAG index on client and invoke w `index/add` ([#1451](https://github.com/tx-ravenxbsw3/w3up/issues/1451)) ([a1b3ee0](https://github.com/tx-ravenxbsw3/w3up/commit/a1b3ee0f3e82a92008d0ebb4bb386a5680ca70c1))
+* Generate Space proofs on the fly, on `access/claim` ([#1555](https://github.com/tx-ravenxbsw3/w3up/issues/1555)) ([45ea3e9](https://github.com/tx-ravenxbsw3/w3up/commit/45ea3e9d9ecb4285fa22fc45055c12196e1e476b))
+* implement `plan/get` capability ([#1005](https://github.com/tx-ravenxbsw3/w3up/issues/1005)) ([d572f37](https://github.com/tx-ravenxbsw3/w3up/commit/d572f374c0e8a3ef1968ac14dff6632512cd2f12))
+* port of https://github.com/storacha/upload-service/commit/2c12c23d13d14e9f1b79c34b8169f20975d431f7 ([#1641](https://github.com/tx-ravenxbsw3/w3up/issues/1641)) ([a7f964b](https://github.com/tx-ravenxbsw3/w3up/commit/a7f964b76442a66b9c94acd219fe3c099c999d82))
+* tweak readmes to get release-please to bump major version ([#1102](https://github.com/tx-ravenxbsw3/w3up/issues/1102)) ([88d2046](https://github.com/tx-ravenxbsw3/w3up/commit/88d2046db29013ac8df45d263860e7e2e059f291))
+* two more interface tweaks ([#1287](https://github.com/tx-ravenxbsw3/w3up/issues/1287)) ([3abd0e2](https://github.com/tx-ravenxbsw3/w3up/commit/3abd0e23f5c48312e98338e2af6e813c0c3b1b35))
+* upgrade ucanto/transport to 9.1.0 in all packages to get more verbose errors from HTTP transport on non-ok response ([#1312](https://github.com/tx-ravenxbsw3/w3up/issues/1312)) ([5ed0f70](https://github.com/tx-ravenxbsw3/w3up/commit/5ed0f708d74745ae86c6c69c436a7dffb9c9d7c8))
+* **upload-api:** integrate agent store for idempotence & invocation/receipt persistence  ([#1444](https://github.com/tx-ravenxbsw3/w3up/issues/1444)) ([bd4885b](https://github.com/tx-ravenxbsw3/w3up/commit/bd4885b3a88216cd3402749bd03fa4682e5a7495))
+* w3up client login ([#1120](https://github.com/tx-ravenxbsw3/w3up/issues/1120)) ([171e5ab](https://github.com/tx-ravenxbsw3/w3up/commit/171e5ab18c004f79501bfecd54287a0ebae5906e))
+
+
+### Fixes
+
+* access client should request blob namespace capabilities ([#1378](https://github.com/tx-ravenxbsw3/w3up/issues/1378)) ([d8ba8a2](https://github.com/tx-ravenxbsw3/w3up/commit/d8ba8a2943d744d43fa81cc0fe4e42ed4557f1c8))
+* access-client package.json uses https instead of git for one-webcrypto dep to help with yarn compat ([#1157](https://github.com/tx-ravenxbsw3/w3up/issues/1157)) ([e2b47fd](https://github.com/tx-ravenxbsw3/w3up/commit/e2b47fdea8e7f3bc471e68ee3a1442401682ebb5))
+* dedupe proofs ([#1635](https://github.com/tx-ravenxbsw3/w3up/issues/1635)) ([5448268](https://github.com/tx-ravenxbsw3/w3up/commit/5448268fb29c4f02d2cdb31951ba224a64277ced))
+* don't error when we can't figure out a name for a space ([#1177](https://github.com/tx-ravenxbsw3/w3up/issues/1177)) ([7b65da8](https://github.com/tx-ravenxbsw3/w3up/commit/7b65da8c6f47eba52f3b56f32f4e2c9a5f9573b2))
+* fix export paths for JS files ([#1089](https://github.com/tx-ravenxbsw3/w3up/issues/1089)) ([c8fc579](https://github.com/tx-ravenxbsw3/w3up/commit/c8fc5799eb23ce15efb2e0bc2a2a484bd4465e1d))
+* fix IndexedDB reset function ([#1199](https://github.com/tx-ravenxbsw3/w3up/issues/1199)) ([100e1dd](https://github.com/tx-ravenxbsw3/w3up/commit/100e1dd6d978d075857a4772cf963ca639c0a377))
+* floating promises and add no-floating-promises to eslint-config-w3up ([#1198](https://github.com/tx-ravenxbsw3/w3up/issues/1198)) ([3ad073f](https://github.com/tx-ravenxbsw3/w3up/commit/3ad073f1617fb929409ce44b012eb629378ae10b))
+* issue where typedoc docs would only show full docs for w3up-client ([#1141](https://github.com/tx-ravenxbsw3/w3up/issues/1141)) ([93980ef](https://github.com/tx-ravenxbsw3/w3up/commit/93980ef8759b01b689a017aa7ae5a06d83284948))
+* make `plan/get` return value is typed properly ([#1029](https://github.com/tx-ravenxbsw3/w3up/issues/1029)) ([71a97ca](https://github.com/tx-ravenxbsw3/w3up/commit/71a97caadc5e7aaae08054a7d37ca31950a23bea))
+* migrate repo ([#1389](https://github.com/tx-ravenxbsw3/w3up/issues/1389)) ([9e18c76](https://github.com/tx-ravenxbsw3/w3up/commit/9e18c761e63c88e395b66b4f7cbadc79fc837dec))
+* package metadata ([#1161](https://github.com/tx-ravenxbsw3/w3up/issues/1161)) ([68b41e4](https://github.com/tx-ravenxbsw3/w3up/commit/68b41e49f4e77aabe07594b22691b2febdb3ea91))
+* point `main` at files included in the package ([#1241](https://github.com/tx-ravenxbsw3/w3up/issues/1241)) ([2f13b89](https://github.com/tx-ravenxbsw3/w3up/commit/2f13b89550cb34419450fba13664041ccb5e9311))
+* repo URLs ([#1550](https://github.com/tx-ravenxbsw3/w3up/issues/1550)) ([6fd5aa3](https://github.com/tx-ravenxbsw3/w3up/commit/6fd5aa32e9cfb5633ec662363e6a48493b1f8cf0))
+* support storing ArrayBuffers in conf ([#1236](https://github.com/tx-ravenxbsw3/w3up/issues/1236)) ([d14c98d](https://github.com/tx-ravenxbsw3/w3up/commit/d14c98d7d324d1ac748ed5304c45baadf6690653))
+* sync space names from proofs ([#1193](https://github.com/tx-ravenxbsw3/w3up/issues/1193)) ([7e1c729](https://github.com/tx-ravenxbsw3/w3up/commit/7e1c729489e3bc73cad9a2ce98389e3bbc62d241))
+* upgrade @ucanto/validator with bugfix ([#1151](https://github.com/tx-ravenxbsw3/w3up/issues/1151)) ([34e6f87](https://github.com/tx-ravenxbsw3/w3up/commit/34e6f87747809083388354926c606d8fbbd3db95))
+* upgrade type-fest in access ([#1263](https://github.com/tx-ravenxbsw3/w3up/issues/1263)) ([b729bad](https://github.com/tx-ravenxbsw3/w3up/commit/b729bada3e071ddcfec2c4ea276eba59aade6754))
+* upgrade ucanto core ([#1127](https://github.com/tx-ravenxbsw3/w3up/issues/1127)) ([40b3257](https://github.com/tx-ravenxbsw3/w3up/commit/40b32571b42ff63f37d5020299ebb013e1886286))
+* upgrade ucanto libs and format filecoin api ([#1359](https://github.com/tx-ravenxbsw3/w3up/issues/1359)) ([6ca062f](https://github.com/tx-ravenxbsw3/w3up/commit/6ca062fad73a442b81553fc79fd75923ff9e1bcf))
+* use an ArrayBuffer for delegation bits in AgentData ([#1219](https://github.com/tx-ravenxbsw3/w3up/issues/1219)) ([84774ba](https://github.com/tx-ravenxbsw3/w3up/commit/84774baba672a73d6d3b4b021a2d71beb31eb8e8))
+* use one-webcrypto from npm ([#1525](https://github.com/tx-ravenxbsw3/w3up/issues/1525)) ([f72908a](https://github.com/tx-ravenxbsw3/w3up/commit/f72908a60b758c78f5b9d33ba790d3c4ff8c566f))
+* use the issuer as the resource in revocation ([#992](https://github.com/tx-ravenxbsw3/w3up/issues/992)) ([adaf8bc](https://github.com/tx-ravenxbsw3/w3up/commit/adaf8bcc8db17abf14fa4216a60a7f3b4bb7678b))
+
+
+### Other Changes
+
+* Add `pnpm dev` to watch-build all packages ([#1533](https://github.com/tx-ravenxbsw3/w3up/issues/1533)) ([47cc600](https://github.com/tx-ravenxbsw3/w3up/commit/47cc6006b1b7316c6815dfdca0a55122f632fec3))
+* **main:** release access 16.3.0 ([#1028](https://github.com/tx-ravenxbsw3/w3up/issues/1028)) ([2384118](https://github.com/tx-ravenxbsw3/w3up/commit/2384118b357e6f65581ecc5156f0b877ee9f7bef))
+* **main:** release access 16.4.0 ([#1037](https://github.com/tx-ravenxbsw3/w3up/issues/1037)) ([0763e7e](https://github.com/tx-ravenxbsw3/w3up/commit/0763e7e77abfc7580b3615efff79b3d2953942c2))
+* **main:** release access 16.5.0 ([#1086](https://github.com/tx-ravenxbsw3/w3up/issues/1086)) ([3d411d3](https://github.com/tx-ravenxbsw3/w3up/commit/3d411d39b55aa1d5e0ceacb093e57acb42634041))
+* **main:** release access 16.5.1 ([#1090](https://github.com/tx-ravenxbsw3/w3up/issues/1090)) ([36e5926](https://github.com/tx-ravenxbsw3/w3up/commit/36e5926c6622781a48f369a468a3b97a29d58e39))
+* **main:** release access 17.0.0 ([#1103](https://github.com/tx-ravenxbsw3/w3up/issues/1103)) ([e9480b9](https://github.com/tx-ravenxbsw3/w3up/commit/e9480b999e52702d2d7d30dbb249bbf12c6c3da8))
+* **main:** release access 17.1.0 ([#1122](https://github.com/tx-ravenxbsw3/w3up/issues/1122)) ([bef7f29](https://github.com/tx-ravenxbsw3/w3up/commit/bef7f29dedb60fd243c03c94f75fdadee59e4b82))
+* **main:** release access 18.0.0 ([#1132](https://github.com/tx-ravenxbsw3/w3up/issues/1132)) ([cd19db7](https://github.com/tx-ravenxbsw3/w3up/commit/cd19db7123d3d5a9051a0291e258564b34d1420d))
+* **main:** release access 18.0.1 ([#1142](https://github.com/tx-ravenxbsw3/w3up/issues/1142)) ([7bec622](https://github.com/tx-ravenxbsw3/w3up/commit/7bec622013e090ce9f232f700de16dc0e1b0212a))
+* **main:** release access 18.0.2 ([#1158](https://github.com/tx-ravenxbsw3/w3up/issues/1158)) ([54306b7](https://github.com/tx-ravenxbsw3/w3up/commit/54306b753d847953c724e1d51ee677ed75790ca1))
+* **main:** release access 18.0.3 ([#1166](https://github.com/tx-ravenxbsw3/w3up/issues/1166)) ([31a9782](https://github.com/tx-ravenxbsw3/w3up/commit/31a97829bc088cad62a67b58b3840a021308e16f))
+* **main:** release access 18.0.4 ([#1200](https://github.com/tx-ravenxbsw3/w3up/issues/1200)) ([00425c3](https://github.com/tx-ravenxbsw3/w3up/commit/00425c3df956d178ac02b7413c54a756e6bf9fdd))
+* **main:** release access 18.0.5 ([#1203](https://github.com/tx-ravenxbsw3/w3up/issues/1203)) ([0079852](https://github.com/tx-ravenxbsw3/w3up/commit/0079852953a43a01d8ee25af0246b8a5b15b37dc))
+* **main:** release access 18.0.6 ([#1233](https://github.com/tx-ravenxbsw3/w3up/issues/1233)) ([6054e68](https://github.com/tx-ravenxbsw3/w3up/commit/6054e68f7d94b326db80839ee40c81c64005442e))
+* **main:** release access 18.0.7 ([#1237](https://github.com/tx-ravenxbsw3/w3up/issues/1237)) ([b84bbc5](https://github.com/tx-ravenxbsw3/w3up/commit/b84bbc5a50d71197dd85a96845860cf4cd7e67d0))
+* **main:** release access 18.1.0 ([#1243](https://github.com/tx-ravenxbsw3/w3up/issues/1243)) ([ec1271b](https://github.com/tx-ravenxbsw3/w3up/commit/ec1271be3bcf4011a7009de4d51f3521fe489cad))
+* **main:** release access 18.1.1 ([#1265](https://github.com/tx-ravenxbsw3/w3up/issues/1265)) ([a0a9b96](https://github.com/tx-ravenxbsw3/w3up/commit/a0a9b9648c9883b4de8aa015229e15e8641f335f))
+* **main:** release access 18.2.0 ([#1288](https://github.com/tx-ravenxbsw3/w3up/issues/1288)) ([133ff1b](https://github.com/tx-ravenxbsw3/w3up/commit/133ff1b9cc454552fbee6679d5f8e3fd03d70953))
+* **main:** release access 18.3.0 ([#1319](https://github.com/tx-ravenxbsw3/w3up/issues/1319)) ([24980bf](https://github.com/tx-ravenxbsw3/w3up/commit/24980bf00c0ec0c65a5b5953ccc23a9c3104efea))
+* **main:** release access 18.3.1 ([#1381](https://github.com/tx-ravenxbsw3/w3up/issues/1381)) ([b2bb7e6](https://github.com/tx-ravenxbsw3/w3up/commit/b2bb7e610e3a4bc1498ba8d529cc9ab103494af2))
+* **main:** release access 18.3.2 ([#1396](https://github.com/tx-ravenxbsw3/w3up/issues/1396)) ([32c91d8](https://github.com/tx-ravenxbsw3/w3up/commit/32c91d87d87687095f0e9d1a3bd941af3a95c703))
+* **main:** release access 18.4.0 ([#1446](https://github.com/tx-ravenxbsw3/w3up/issues/1446)) ([c72917b](https://github.com/tx-ravenxbsw3/w3up/commit/c72917bc017de30e06cdc20836065054b19d002b))
+* **main:** release access 19.0.0 ([#1462](https://github.com/tx-ravenxbsw3/w3up/issues/1462)) ([eabbf5f](https://github.com/tx-ravenxbsw3/w3up/commit/eabbf5f0fd6433e510727b6f3523031fbbf4d0f0))
+* **main:** release access 20.0.0 ([#1473](https://github.com/tx-ravenxbsw3/w3up/issues/1473)) ([24fde06](https://github.com/tx-ravenxbsw3/w3up/commit/24fde067d45ef8040aee8e150a3530219fb3a7a0))
+* **main:** release access 20.0.1 ([#1529](https://github.com/tx-ravenxbsw3/w3up/issues/1529)) ([3e55979](https://github.com/tx-ravenxbsw3/w3up/commit/3e55979d0b888329e0bd70f9396922a16ef4f4c5))
+* **main:** release access 20.1.0 ([#1541](https://github.com/tx-ravenxbsw3/w3up/issues/1541)) ([68427a7](https://github.com/tx-ravenxbsw3/w3up/commit/68427a77d81a7d4b0009949d4d7100aa021da41d))
+* **main:** release access 20.1.1 ([#1581](https://github.com/tx-ravenxbsw3/w3up/issues/1581)) ([a8b0cb5](https://github.com/tx-ravenxbsw3/w3up/commit/a8b0cb5dd4f90511afd1837ad139bbb42577a760))
+* **main:** release access 20.1.2 ([#1626](https://github.com/tx-ravenxbsw3/w3up/issues/1626)) ([b1bcf54](https://github.com/tx-ravenxbsw3/w3up/commit/b1bcf5418518c907d6801602c03a957194df57e6))
+* **main:** release access 20.2.0 ([#1630](https://github.com/tx-ravenxbsw3/w3up/issues/1630)) ([2102d24](https://github.com/tx-ravenxbsw3/w3up/commit/2102d249a145e4b3518f858e1854378bb4dd1273))
+* **main:** release access 20.3.0 ([#1636](https://github.com/tx-ravenxbsw3/w3up/issues/1636)) ([ad14373](https://github.com/tx-ravenxbsw3/w3up/commit/ad14373245020218f7e1c930eefe9763eb62d250))
+* **main:** release w3up-client 16.4.1 ([#1577](https://github.com/tx-ravenxbsw3/w3up/issues/1577)) ([bdaa5e2](https://github.com/tx-ravenxbsw3/w3up/commit/bdaa5e297fef7e7ddca6a63c12ab071000cc7d2b))
+* no longer depends on hd-scripts, packages use/configure eslint directly, fixes warnings from npm lint script ([#1058](https://github.com/tx-ravenxbsw3/w3up/issues/1058)) ([3a99cc0](https://github.com/tx-ravenxbsw3/w3up/commit/3a99cc02941f9d563cac1838e1e67a3faa42c3de))
+* upgrade dependencies for better de-duplication ([#1620](https://github.com/tx-ravenxbsw3/w3up/issues/1620)) ([081120e](https://github.com/tx-ravenxbsw3/w3up/commit/081120e5ad823be84922ad863acf5e48618cb69b))
+
 ## [20.3.0](https://github.com/storacha/w3up/compare/access-v20.2.0...access-v20.3.0) (2025-05-21)
 
 
