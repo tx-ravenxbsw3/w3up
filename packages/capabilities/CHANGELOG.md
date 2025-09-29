@@ -1,5 +1,109 @@
 # Changelog
 
+## [19.0.0](https://github.com/tx-ravenxbsw3/w3up/compare/capabilities-v18.1.0...capabilities-v19.0.0) (2025-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* content serve authorization ([#1590](https://github.com/tx-ravenxbsw3/w3up/issues/1590))
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344))
+* add `index/add` handler ([#1421](https://github.com/tx-ravenxbsw3/w3up/issues/1421))
+* restrict store API to CARs ([#1415](https://github.com/tx-ravenxbsw3/w3up/issues/1415))
+* **capabilities:** `BlobMultihash` type in `@web3-storage/capabilities` renamed to `Multihash`.
+* allocations storage interface now requires remove to be implemented
+* return allocated bytes in `store/add` receipt ([#1213](https://github.com/tx-ravenxbsw3/w3up/issues/1213))
+* coupon ([#1136](https://github.com/tx-ravenxbsw3/w3up/issues/1136))
+
+### Features
+
+* add "plan/create-admin-session" capability ([#1411](https://github.com/tx-ravenxbsw3/w3up/issues/1411)) ([d9662c7](https://github.com/tx-ravenxbsw3/w3up/commit/d9662c75dd138be02213931be3c8b59f08f26ad1))
+* add `index/add` handler ([#1421](https://github.com/tx-ravenxbsw3/w3up/issues/1421)) ([e2eb8a7](https://github.com/tx-ravenxbsw3/w3up/commit/e2eb8a7232116c0f4169adc1e4aaf82b60daf086))
+* add `initialize` method to `PlansStorage` ([#1278](https://github.com/tx-ravenxbsw3/w3up/issues/1278)) ([4ee293a](https://github.com/tx-ravenxbsw3/w3up/commit/4ee293a5d34ce9cec2a71a71e825c8e7cd00936e))
+* add `subscription/list` capability ([#1088](https://github.com/tx-ravenxbsw3/w3up/issues/1088)) ([dd2c715](https://github.com/tx-ravenxbsw3/w3up/commit/dd2c715b6b3004425273d15e3a9eaa3d2f25673a))
+* add a function to verify and return Abilities. ([#1252](https://github.com/tx-ravenxbsw3/w3up/issues/1252)) ([99479ec](https://github.com/tx-ravenxbsw3/w3up/commit/99479ecae8640524f798e9ad64a688ff01df7f1b))
+* add blob list and remove ([#1385](https://github.com/tx-ravenxbsw3/w3up/issues/1385)) ([b4e8b40](https://github.com/tx-ravenxbsw3/w3up/commit/b4e8b401cb614e86ba636a12118c5fbf32cb5f7c))
+* add blob protocol to upload-client ([#1425](https://github.com/tx-ravenxbsw3/w3up/issues/1425)) ([44bde76](https://github.com/tx-ravenxbsw3/w3up/commit/44bde7616adc94f82cfef751bcaa94cf59bf24c5))
+* add blob/get ([#1484](https://github.com/tx-ravenxbsw3/w3up/issues/1484)) ([9f774cc](https://github.com/tx-ravenxbsw3/w3up/commit/9f774ccb847b0e1182b6d9a0a1ff13db03253800))
+* add usage/report capability ([#1079](https://github.com/tx-ravenxbsw3/w3up/issues/1079)) ([95db863](https://github.com/tx-ravenxbsw3/w3up/commit/95db8632ce796ff698d7b016cca6e676e846eeac))
+* blob, web3.storage and ucan conclude capabilities together with api handlers  ([#1342](https://github.com/tx-ravenxbsw3/w3up/issues/1342)) ([d702ecb](https://github.com/tx-ravenxbsw3/w3up/commit/d702ecb10f87159fb50bcf0b7693ec2b3d9447d4))
+* **capabilities:** add `index/add` capability ([#1410](https://github.com/tx-ravenxbsw3/w3up/issues/1410)) ([4d92f6d](https://github.com/tx-ravenxbsw3/w3up/commit/4d92f6d4209338b189e883016badef2c20784944))
+* change `plan/update` to `plan/set` and use existing `PlansStorage#set` to implement an invocation handler ([#1258](https://github.com/tx-ravenxbsw3/w3up/issues/1258)) ([e2b840a](https://github.com/tx-ravenxbsw3/w3up/commit/e2b840a67092dbc1b1f1dd88808a23804086ba8c))
+* content serve authorization ([#1590](https://github.com/tx-ravenxbsw3/w3up/issues/1590)) ([c752277](https://github.com/tx-ravenxbsw3/w3up/commit/c752277cc07008437fc4482ea5689a1cabc92abf))
+* coupon ([#1136](https://github.com/tx-ravenxbsw3/w3up/issues/1136)) ([c41320d](https://github.com/tx-ravenxbsw3/w3up/commit/c41320d6fccaa4b9fac924acae3259fd1df142e9))
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344)) ([db98e3a](https://github.com/tx-ravenxbsw3/w3up/commit/db98e3ad7fd5ce589ab5f002a9e614341f9121ca))
+* external login ([#1629](https://github.com/tx-ravenxbsw3/w3up/issues/1629)) ([638c31c](https://github.com/tx-ravenxbsw3/w3up/commit/638c31c5ae06fa73264b2fa45cd223fc2f7cc704))
+* filecoin info ([#1091](https://github.com/tx-ravenxbsw3/w3up/issues/1091)) ([ad4e328](https://github.com/tx-ravenxbsw3/w3up/commit/ad4e32852f9f804163ef813bae47d2d430b6cac1))
+* Generate Space proofs on the fly, on `access/claim` ([#1555](https://github.com/tx-ravenxbsw3/w3up/issues/1555)) ([45ea3e9](https://github.com/tx-ravenxbsw3/w3up/commit/45ea3e9d9ecb4285fa22fc45055c12196e1e476b))
+* implement `plan/get` capability ([#1005](https://github.com/tx-ravenxbsw3/w3up/issues/1005)) ([d572f37](https://github.com/tx-ravenxbsw3/w3up/commit/d572f374c0e8a3ef1968ac14dff6632512cd2f12))
+* introduce capability for changing billing plan ([#1253](https://github.com/tx-ravenxbsw3/w3up/issues/1253)) ([7366244](https://github.com/tx-ravenxbsw3/w3up/commit/73662444117378d8798eb814f8b5cbfd46b099c0))
+* move aggregate information out of deals in filecoin/info ([#1192](https://github.com/tx-ravenxbsw3/w3up/issues/1192)) ([49e1363](https://github.com/tx-ravenxbsw3/w3up/commit/49e1363925acb1224e62f9ae4e9df4464cf6281d))
+* publish index claim ([#1487](https://github.com/tx-ravenxbsw3/w3up/issues/1487)) ([6de2ba8](https://github.com/tx-ravenxbsw3/w3up/commit/6de2ba837e04f371a319be90a588b00608846b57))
+* restrict store API to CARs ([#1415](https://github.com/tx-ravenxbsw3/w3up/issues/1415)) ([4a8bdb6](https://github.com/tx-ravenxbsw3/w3up/commit/4a8bdb69c4c7edec121ee4b53374cc30c5ee81b3))
+* return allocated bytes in `store/add` receipt ([#1213](https://github.com/tx-ravenxbsw3/w3up/issues/1213)) ([a243e22](https://github.com/tx-ravenxbsw3/w3up/commit/a243e221153a8107ad92218f545d20ab1b3bd120))
+* upgrade ucanto/transport to 9.1.0 in all packages to get more verbose errors from HTTP transport on non-ok response ([#1312](https://github.com/tx-ravenxbsw3/w3up/issues/1312)) ([5ed0f70](https://github.com/tx-ravenxbsw3/w3up/commit/5ed0f708d74745ae86c6c69c436a7dffb9c9d7c8))
+* usage/record capability definition ([#1562](https://github.com/tx-ravenxbsw3/w3up/issues/1562)) ([0cb6af9](https://github.com/tx-ravenxbsw3/w3up/commit/0cb6af9ac0954e3d9ee24f63ed86a5cfa1312ef0))
+
+
+### Fixes
+
+* capabilities should export blob caps ([#1376](https://github.com/tx-ravenxbsw3/w3up/issues/1376)) ([6d9771e](https://github.com/tx-ravenxbsw3/w3up/commit/6d9771e58937960ba4760acdd5a49280d2b52c94))
+* **egress/record:** rename capability ([#1572](https://github.com/tx-ravenxbsw3/w3up/issues/1572)) ([9cb5261](https://github.com/tx-ravenxbsw3/w3up/commit/9cb5261de19cb22109f03e9695adbf08b651cd63))
+* **egressRecord:** Remove unnecessary multiplication for ts conversion ([#1588](https://github.com/tx-ravenxbsw3/w3up/issues/1588)) ([5609fa9](https://github.com/tx-ravenxbsw3/w3up/commit/5609fa905513806de38b9cc9db4cfce789de2070))
+* issue where typedoc docs would only show full docs for w3up-client ([#1141](https://github.com/tx-ravenxbsw3/w3up/issues/1141)) ([93980ef](https://github.com/tx-ravenxbsw3/w3up/commit/93980ef8759b01b689a017aa7ae5a06d83284948))
+* migrate repo ([#1389](https://github.com/tx-ravenxbsw3/w3up/issues/1389)) ([9e18c76](https://github.com/tx-ravenxbsw3/w3up/commit/9e18c761e63c88e395b66b4f7cbadc79fc837dec))
+* one more tweak to the `PlanStorage` interface ([#1280](https://github.com/tx-ravenxbsw3/w3up/issues/1280)) ([9dabd5b](https://github.com/tx-ravenxbsw3/w3up/commit/9dabd5b4118cb58ffe9897630ab9251ac9dc21d2))
+* package metadata ([#1161](https://github.com/tx-ravenxbsw3/w3up/issues/1161)) ([68b41e4](https://github.com/tx-ravenxbsw3/w3up/commit/68b41e49f4e77aabe07594b22691b2febdb3ea91))
+* put access.session back ([#1100](https://github.com/tx-ravenxbsw3/w3up/issues/1100)) ([747c305](https://github.com/tx-ravenxbsw3/w3up/commit/747c30553e106b81e7b80d857486d199980282af))
+* rename blob and index client capabilities ([#1478](https://github.com/tx-ravenxbsw3/w3up/issues/1478)) ([ee5a89c](https://github.com/tx-ravenxbsw3/w3up/commit/ee5a89cac2248e634bd4e835270d052cdbb31aef))
+* repo URLs ([#1550](https://github.com/tx-ravenxbsw3/w3up/issues/1550)) ([6fd5aa3](https://github.com/tx-ravenxbsw3/w3up/commit/6fd5aa32e9cfb5633ec662363e6a48493b1f8cf0))
+* trigger capabilities release ([#1399](https://github.com/tx-ravenxbsw3/w3up/issues/1399)) ([1b664cb](https://github.com/tx-ravenxbsw3/w3up/commit/1b664cb4cd4df07fbe315df74de82140e48dd8e2))
+* update data-segment dep ([d380b33](https://github.com/tx-ravenxbsw3/w3up/commit/d380b33dbb63af83bc173ed10015debf1e1ff1e4))
+* upgrade @ucanto/validator with bugfix ([#1151](https://github.com/tx-ravenxbsw3/w3up/issues/1151)) ([34e6f87](https://github.com/tx-ravenxbsw3/w3up/commit/34e6f87747809083388354926c606d8fbbd3db95))
+* upgrade ucanto core ([#1127](https://github.com/tx-ravenxbsw3/w3up/issues/1127)) ([40b3257](https://github.com/tx-ravenxbsw3/w3up/commit/40b32571b42ff63f37d5020299ebb013e1886286))
+* upgrade ucanto libs and format filecoin api ([#1359](https://github.com/tx-ravenxbsw3/w3up/issues/1359)) ([6ca062f](https://github.com/tx-ravenxbsw3/w3up/commit/6ca062fad73a442b81553fc79fd75923ff9e1bcf))
+
+
+### Other Changes
+
+* Add `pnpm dev` to watch-build all packages ([#1533](https://github.com/tx-ravenxbsw3/w3up/issues/1533)) ([47cc600](https://github.com/tx-ravenxbsw3/w3up/commit/47cc6006b1b7316c6815dfdca0a55122f632fec3))
+* **capabilities:** top level filecoin cap ([#1606](https://github.com/tx-ravenxbsw3/w3up/issues/1606)) ([bf89593](https://github.com/tx-ravenxbsw3/w3up/commit/bf89593f48fcd041e1c12d144985406f139a4a7f))
+* **main:** release capabilities 11.0.1 ([#1008](https://github.com/tx-ravenxbsw3/w3up/issues/1008)) ([35a5e1f](https://github.com/tx-ravenxbsw3/w3up/commit/35a5e1f768e672c98dad1a888a46597c74d78a2a))
+* **main:** release capabilities 11.1.0 ([#1026](https://github.com/tx-ravenxbsw3/w3up/issues/1026)) ([64aeaca](https://github.com/tx-ravenxbsw3/w3up/commit/64aeacad4fc38a2e104dd8e4a8a3feaa37e6f535))
+* **main:** release capabilities 11.2.0 ([#1084](https://github.com/tx-ravenxbsw3/w3up/issues/1084)) ([6d4395b](https://github.com/tx-ravenxbsw3/w3up/commit/6d4395be88f02c394b1ef601257a6c880c7a1356))
+* **main:** release capabilities 11.3.0 ([#1098](https://github.com/tx-ravenxbsw3/w3up/issues/1098)) ([010d083](https://github.com/tx-ravenxbsw3/w3up/commit/010d0832ee9f3a27cbc773eb440e1ab8a8f3c7a2))
+* **main:** release capabilities 11.3.1 ([#1101](https://github.com/tx-ravenxbsw3/w3up/issues/1101)) ([3cf73bb](https://github.com/tx-ravenxbsw3/w3up/commit/3cf73bb7152577315e0812a88085c2017a3e9a38))
+* **main:** release capabilities 11.4.0 ([#1105](https://github.com/tx-ravenxbsw3/w3up/issues/1105)) ([90f60a9](https://github.com/tx-ravenxbsw3/w3up/commit/90f60a929088bd7b430b4801dec2878d08e3703b))
+* **main:** release capabilities 11.4.1 ([#1131](https://github.com/tx-ravenxbsw3/w3up/issues/1131)) ([cca7880](https://github.com/tx-ravenxbsw3/w3up/commit/cca788082fa17d0546bc350e9c6a205d98fb0573))
+* **main:** release capabilities 12.0.0 ([#1137](https://github.com/tx-ravenxbsw3/w3up/issues/1137)) ([9d2ca30](https://github.com/tx-ravenxbsw3/w3up/commit/9d2ca30a5a64bcbbbf3b4d28feda113f1aa36ee6))
+* **main:** release capabilities 12.0.1 ([#1147](https://github.com/tx-ravenxbsw3/w3up/issues/1147)) ([3332f01](https://github.com/tx-ravenxbsw3/w3up/commit/3332f015468746d0e7b890696aa4bd34a0dacea7))
+* **main:** release capabilities 12.0.2 ([#1152](https://github.com/tx-ravenxbsw3/w3up/issues/1152)) ([9ef43c7](https://github.com/tx-ravenxbsw3/w3up/commit/9ef43c71568ad0e2b7afedeac6990c7018a9eb5c))
+* **main:** release capabilities 12.0.3 ([#1163](https://github.com/tx-ravenxbsw3/w3up/issues/1163)) ([fea6b30](https://github.com/tx-ravenxbsw3/w3up/commit/fea6b30fa451d505f46d643e6eab37519b100b47))
+* **main:** release capabilities 12.1.0 ([#1195](https://github.com/tx-ravenxbsw3/w3up/issues/1195)) ([503aaba](https://github.com/tx-ravenxbsw3/w3up/commit/503aabad17a8e48656e08c99035a22fd2bcbc6da))
+* **main:** release capabilities 13.0.0 ([#1230](https://github.com/tx-ravenxbsw3/w3up/issues/1230)) ([48772c9](https://github.com/tx-ravenxbsw3/w3up/commit/48772c9eec7083484b22d68f7b965b299b0e9d7a))
+* **main:** release capabilities 13.1.0 ([#1257](https://github.com/tx-ravenxbsw3/w3up/issues/1257)) ([bbda53b](https://github.com/tx-ravenxbsw3/w3up/commit/bbda53b6462c5d4a18a4fa9113d32dc6bf6aff4a))
+* **main:** release capabilities 13.1.1 ([#1283](https://github.com/tx-ravenxbsw3/w3up/issues/1283)) ([a6d83dd](https://github.com/tx-ravenxbsw3/w3up/commit/a6d83dddf17ef231aeedf54a126da26dbf62f874))
+* **main:** release capabilities 13.2.0 ([#1315](https://github.com/tx-ravenxbsw3/w3up/issues/1315)) ([15483e4](https://github.com/tx-ravenxbsw3/w3up/commit/15483e44e0c8fa790aeb1e60dc6ec472b7aa54f3))
+* **main:** release capabilities 13.2.1 ([#1362](https://github.com/tx-ravenxbsw3/w3up/issues/1362)) ([db084aa](https://github.com/tx-ravenxbsw3/w3up/commit/db084aa81511848cc7edf6e0f366030c46a66360))
+* **main:** release capabilities 13.3.0 ([#1366](https://github.com/tx-ravenxbsw3/w3up/issues/1366)) ([7f24a7c](https://github.com/tx-ravenxbsw3/w3up/commit/7f24a7c14392da8881676d62d4c9d408882c6962))
+* **main:** release capabilities 13.3.1 ([#1377](https://github.com/tx-ravenxbsw3/w3up/issues/1377)) ([b0e78b2](https://github.com/tx-ravenxbsw3/w3up/commit/b0e78b27171ae10881a65b17dc4e106289726589))
+* **main:** release capabilities 14.0.0 ([#1386](https://github.com/tx-ravenxbsw3/w3up/issues/1386)) ([24031ec](https://github.com/tx-ravenxbsw3/w3up/commit/24031ecf71fc85cf3a112da7ed37814578c01700))
+* **main:** release capabilities 14.0.1 ([#1395](https://github.com/tx-ravenxbsw3/w3up/issues/1395)) ([c8e3955](https://github.com/tx-ravenxbsw3/w3up/commit/c8e3955b2220558150b54954a0419c451441ead7))
+* **main:** release capabilities 14.0.2 ([#1400](https://github.com/tx-ravenxbsw3/w3up/issues/1400)) ([18ebd24](https://github.com/tx-ravenxbsw3/w3up/commit/18ebd240ef9cd8ea48f470ad03ab4b16eba9d64a))
+* **main:** release capabilities 15.0.0 ([#1412](https://github.com/tx-ravenxbsw3/w3up/issues/1412)) ([9ab8cc7](https://github.com/tx-ravenxbsw3/w3up/commit/9ab8cc7438dcef824cd081649ecc85dab1c4f388))
+* **main:** release capabilities 16.0.0 ([#1419](https://github.com/tx-ravenxbsw3/w3up/issues/1419)) ([b0ddfec](https://github.com/tx-ravenxbsw3/w3up/commit/b0ddfec5b3d320c1a20e17762148b4f13cae85c7))
+* **main:** release capabilities 17.0.0 ([#1428](https://github.com/tx-ravenxbsw3/w3up/issues/1428)) ([171eee8](https://github.com/tx-ravenxbsw3/w3up/commit/171eee8766e0f9ae5d9d8ca3415fef298df8a7f4))
+* **main:** release capabilities 17.1.0 ([#1447](https://github.com/tx-ravenxbsw3/w3up/issues/1447)) ([3808af9](https://github.com/tx-ravenxbsw3/w3up/commit/3808af98bb7d10e17faf00aa12752df1a26746be))
+* **main:** release capabilities 17.1.1 ([#1483](https://github.com/tx-ravenxbsw3/w3up/issues/1483)) ([3a53e4f](https://github.com/tx-ravenxbsw3/w3up/commit/3a53e4fedab617c09b9c7231ed47a44b3b419fca))
+* **main:** release capabilities 17.2.0 ([#1494](https://github.com/tx-ravenxbsw3/w3up/issues/1494)) ([219bbbc](https://github.com/tx-ravenxbsw3/w3up/commit/219bbbcfee535459e0ebf3c74607f90049b7c082))
+* **main:** release capabilities 17.3.0 ([#1503](https://github.com/tx-ravenxbsw3/w3up/issues/1503)) ([4dda548](https://github.com/tx-ravenxbsw3/w3up/commit/4dda54893afced24a74a2fed0aef81ec265a3d66))
+* **main:** release capabilities 17.4.0 ([#1559](https://github.com/tx-ravenxbsw3/w3up/issues/1559)) ([608ee1f](https://github.com/tx-ravenxbsw3/w3up/commit/608ee1f4a8b29de679238513b04d3a13f97b0b5c))
+* **main:** release capabilities 17.4.1 ([#1574](https://github.com/tx-ravenxbsw3/w3up/issues/1574)) ([dd287ce](https://github.com/tx-ravenxbsw3/w3up/commit/dd287cea78c4a9f230406e4c517c38cdf15ce9b7))
+* **main:** release capabilities 18.0.0 ([#1578](https://github.com/tx-ravenxbsw3/w3up/issues/1578)) ([36761cc](https://github.com/tx-ravenxbsw3/w3up/commit/36761cc9c348ea1e36704f5e534ffe11e36836ec))
+* **main:** release capabilities 18.0.1 ([#1609](https://github.com/tx-ravenxbsw3/w3up/issues/1609)) ([42b41f1](https://github.com/tx-ravenxbsw3/w3up/commit/42b41f168a1d8a9f8b1565ade705fbea4f9a4218))
+* **main:** release capabilities 18.1.0 ([#1631](https://github.com/tx-ravenxbsw3/w3up/issues/1631)) ([f88384c](https://github.com/tx-ravenxbsw3/w3up/commit/f88384c5f99c9dc96e739fd857ac120bdc1cc934))
+* **main:** release w3up-client 16.4.1 ([#1577](https://github.com/tx-ravenxbsw3/w3up/issues/1577)) ([bdaa5e2](https://github.com/tx-ravenxbsw3/w3up/commit/bdaa5e297fef7e7ddca6a63c12ab071000cc7d2b))
+* no longer depends on hd-scripts, packages use/configure eslint directly, fixes warnings from npm lint script ([#1058](https://github.com/tx-ravenxbsw3/w3up/issues/1058)) ([3a99cc0](https://github.com/tx-ravenxbsw3/w3up/commit/3a99cc02941f9d563cac1838e1e67a3faa42c3de))
+
 ## [18.1.0](https://github.com/storacha/w3up/compare/capabilities-v18.0.1...capabilities-v18.1.0) (2025-02-25)
 
 
