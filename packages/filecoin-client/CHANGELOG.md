@@ -1,5 +1,57 @@
 # Changelog
 
+## [4.0.0](https://github.com/tx-ravenxbsw3/w3up/compare/filecoin-client-v3.3.5...filecoin-client-v4.0.0) (2025-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344))
+* upgrade data segment v4 ([#996](https://github.com/tx-ravenxbsw3/w3up/issues/996))
+
+### Features
+
+* deprecate issuer ([#1344](https://github.com/tx-ravenxbsw3/w3up/issues/1344)) ([db98e3a](https://github.com/tx-ravenxbsw3/w3up/commit/db98e3ad7fd5ce589ab5f002a9e614341f9121ca))
+* filecoin info ([#1091](https://github.com/tx-ravenxbsw3/w3up/issues/1091)) ([ad4e328](https://github.com/tx-ravenxbsw3/w3up/commit/ad4e32852f9f804163ef813bae47d2d430b6cac1))
+* move aggregate information out of deals in filecoin/info ([#1192](https://github.com/tx-ravenxbsw3/w3up/issues/1192)) ([49e1363](https://github.com/tx-ravenxbsw3/w3up/commit/49e1363925acb1224e62f9ae4e9df4464cf6281d))
+* upgrade ucanto/transport to 9.1.0 in all packages to get more verbose errors from HTTP transport on non-ok response ([#1312](https://github.com/tx-ravenxbsw3/w3up/issues/1312)) ([5ed0f70](https://github.com/tx-ravenxbsw3/w3up/commit/5ed0f708d74745ae86c6c69c436a7dffb9c9d7c8))
+
+
+### Fixes
+
+* filecoin test use blob ([#1422](https://github.com/tx-ravenxbsw3/w3up/issues/1422)) ([bb37641](https://github.com/tx-ravenxbsw3/w3up/commit/bb37641d5641d3bff879187597b02ae3d1e18674))
+* issue where typedoc docs would only show full docs for w3up-client ([#1141](https://github.com/tx-ravenxbsw3/w3up/issues/1141)) ([93980ef](https://github.com/tx-ravenxbsw3/w3up/commit/93980ef8759b01b689a017aa7ae5a06d83284948))
+* migrate repo ([#1389](https://github.com/tx-ravenxbsw3/w3up/issues/1389)) ([9e18c76](https://github.com/tx-ravenxbsw3/w3up/commit/9e18c761e63c88e395b66b4f7cbadc79fc837dec))
+* package metadata ([#1161](https://github.com/tx-ravenxbsw3/w3up/issues/1161)) ([68b41e4](https://github.com/tx-ravenxbsw3/w3up/commit/68b41e49f4e77aabe07594b22691b2febdb3ea91))
+* receipt chain has wrong CID because no expiration is set ([#1060](https://github.com/tx-ravenxbsw3/w3up/issues/1060)) ([ef4f886](https://github.com/tx-ravenxbsw3/w3up/commit/ef4f8863bd64e0a7941278b850db74efd10b0c7f))
+* repo URLs ([#1550](https://github.com/tx-ravenxbsw3/w3up/issues/1550)) ([6fd5aa3](https://github.com/tx-ravenxbsw3/w3up/commit/6fd5aa32e9cfb5633ec662363e6a48493b1f8cf0))
+* touch filecoin-client README as fix conventional commits in order to trigger release-please patch version ([372eea6](https://github.com/tx-ravenxbsw3/w3up/commit/372eea63c6aa5c5a26b2a5ce8460bef2f13f143e))
+* upgrade data segment v4 ([#996](https://github.com/tx-ravenxbsw3/w3up/issues/996)) ([04b4d1e](https://github.com/tx-ravenxbsw3/w3up/commit/04b4d1e3293dce859a43b433ac76447b4a22b2e0))
+* upgrade filecoin client deal tracker principal ([#1092](https://github.com/tx-ravenxbsw3/w3up/issues/1092)) ([7f95439](https://github.com/tx-ravenxbsw3/w3up/commit/7f95439a5dab0c982040110d805733622e4ed44e))
+* upgrade ucanto core ([#1127](https://github.com/tx-ravenxbsw3/w3up/issues/1127)) ([40b3257](https://github.com/tx-ravenxbsw3/w3up/commit/40b32571b42ff63f37d5020299ebb013e1886286))
+* upgrade ucanto libs and format filecoin api ([#1359](https://github.com/tx-ravenxbsw3/w3up/issues/1359)) ([6ca062f](https://github.com/tx-ravenxbsw3/w3up/commit/6ca062fad73a442b81553fc79fd75923ff9e1bcf))
+
+
+### Other Changes
+
+* Add `pnpm dev` to watch-build all packages ([#1533](https://github.com/tx-ravenxbsw3/w3up/issues/1533)) ([47cc600](https://github.com/tx-ravenxbsw3/w3up/commit/47cc6006b1b7316c6815dfdca0a55122f632fec3))
+* **main:** release filecoin-client 2.0.2 ([#1017](https://github.com/tx-ravenxbsw3/w3up/issues/1017)) ([0582bb1](https://github.com/tx-ravenxbsw3/w3up/commit/0582bb11dae2d8261528edac8f241aad0f47e9c6))
+* **main:** release filecoin-client 3.0.0 ([#1019](https://github.com/tx-ravenxbsw3/w3up/issues/1019)) ([8514228](https://github.com/tx-ravenxbsw3/w3up/commit/851422827334969a1435aad9d84cbee53e468ca4))
+* **main:** release filecoin-client 3.0.1 ([#1062](https://github.com/tx-ravenxbsw3/w3up/issues/1062)) ([07f66b2](https://github.com/tx-ravenxbsw3/w3up/commit/07f66b28ce96298571acd9b3a2556bf002ea07a1))
+* **main:** release filecoin-client 3.0.2 ([#1093](https://github.com/tx-ravenxbsw3/w3up/issues/1093)) ([cc9d3dc](https://github.com/tx-ravenxbsw3/w3up/commit/cc9d3dc86bdcac9a218c4ad73197093c60cc48ef))
+* **main:** release filecoin-client 3.1.0 ([#1097](https://github.com/tx-ravenxbsw3/w3up/issues/1097)) ([af7257c](https://github.com/tx-ravenxbsw3/w3up/commit/af7257c35816428e9d184e16fae9a4e7a2c463ce))
+* **main:** release filecoin-client 3.1.1 ([#1130](https://github.com/tx-ravenxbsw3/w3up/issues/1130)) ([66b391b](https://github.com/tx-ravenxbsw3/w3up/commit/66b391bea534e1c979b46808f34aff1508fd98b6))
+* **main:** release filecoin-client 3.1.2 ([#1146](https://github.com/tx-ravenxbsw3/w3up/issues/1146)) ([2bf2095](https://github.com/tx-ravenxbsw3/w3up/commit/2bf2095f3247232bddb9870edf724b2e1bedaf60))
+* **main:** release filecoin-client 3.1.3 ([#1162](https://github.com/tx-ravenxbsw3/w3up/issues/1162)) ([9ccf320](https://github.com/tx-ravenxbsw3/w3up/commit/9ccf3203a35c924f6663f064375096af919447a0))
+* **main:** release filecoin-client 3.2.0 ([#1197](https://github.com/tx-ravenxbsw3/w3up/issues/1197)) ([e878326](https://github.com/tx-ravenxbsw3/w3up/commit/e8783262e79e4d6d5bc1e5dbf01b09ed47e388ff))
+* **main:** release filecoin-client 3.3.0 ([#1317](https://github.com/tx-ravenxbsw3/w3up/issues/1317)) ([de5ea0e](https://github.com/tx-ravenxbsw3/w3up/commit/de5ea0e3f6e030290fd624659b69eeb6d1477c14))
+* **main:** release filecoin-client 3.3.1 ([#1361](https://github.com/tx-ravenxbsw3/w3up/issues/1361)) ([4c9410a](https://github.com/tx-ravenxbsw3/w3up/commit/4c9410a7dfe5176718695fc9d2a4ae44ff2aa858))
+* **main:** release filecoin-client 3.3.2 ([#1397](https://github.com/tx-ravenxbsw3/w3up/issues/1397)) ([a23f5a8](https://github.com/tx-ravenxbsw3/w3up/commit/a23f5a8d7b9b3fcd04aa9428f3b1e3829ebb6799))
+* **main:** release filecoin-client 3.3.3 ([#1423](https://github.com/tx-ravenxbsw3/w3up/issues/1423)) ([25f65c0](https://github.com/tx-ravenxbsw3/w3up/commit/25f65c07497e9dbb3cf73242811bbaecebe20d52))
+* **main:** release filecoin-client 3.3.4 ([#1539](https://github.com/tx-ravenxbsw3/w3up/issues/1539)) ([b817d1f](https://github.com/tx-ravenxbsw3/w3up/commit/b817d1fe63fcb45dcd6c28f39dedaac2d20f2e19))
+* **main:** release filecoin-client 3.3.5 ([#1579](https://github.com/tx-ravenxbsw3/w3up/issues/1579)) ([514cac5](https://github.com/tx-ravenxbsw3/w3up/commit/514cac594cf83957bf07e0a6ec47bedd9fc571e2))
+* **main:** release w3up-client 16.4.1 ([#1577](https://github.com/tx-ravenxbsw3/w3up/issues/1577)) ([bdaa5e2](https://github.com/tx-ravenxbsw3/w3up/commit/bdaa5e297fef7e7ddca6a63c12ab071000cc7d2b))
+* no longer depends on hd-scripts, packages use/configure eslint directly, fixes warnings from npm lint script ([#1058](https://github.com/tx-ravenxbsw3/w3up/issues/1058)) ([3a99cc0](https://github.com/tx-ravenxbsw3/w3up/commit/3a99cc02941f9d563cac1838e1e67a3faa42c3de))
+
 ## [3.3.5](https://github.com/storacha/w3up/compare/filecoin-client-v3.3.4...filecoin-client-v3.3.5) (2024-12-09)
 
 
